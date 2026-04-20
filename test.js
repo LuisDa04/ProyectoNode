@@ -25,9 +25,8 @@ app.post(`/webhook/${token}`, (req, res) => {
     res.sendStatus(200);
 });
 
-// Configurar el Webhook con Telegram usando la URL que TeleBotHost te dará
 const setWebhook = async () => {
-    const webhookUrl = `https://tu-app.telebothost.com/webhook/${token}`; // ⚠️ CAMBIA 'tu-app' por el nombre de tu aplicación en TeleBotHost
+    const webhookUrl = `https://proyectonode-41qd.onrender.com/webhook/${token}`;
     try {
         await bot.setWebHook(webhookUrl);
         console.log(`Webhook configurado correctamente en: ${webhookUrl}`);
@@ -36,7 +35,6 @@ const setWebhook = async () => {
     }
 };
 
-// Iniciar el servidor web
 const port = process.env.PORT || 3000;
 app.listen(port, async () => {
     console.log(`Servidor iniciado en el puerto ${port}`);
